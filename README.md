@@ -162,3 +162,67 @@
 - Cleanup function
 - 컴포넌트가 생길 때 useEffect로 코드를 실행하듯, 사라질 때도 코드를 실행할 수 있다.
 - useEffect의 첫번째 인자 함수 안에서 새로운 함수를 리턴하면, 컴포넌트가 사라질 때 해당 코드가 실행된다.
+
+<br>
+
+# Part7
+
+### 7.0
+
+- state를 변경할 때는 절대 직접 수정하지 않고, 함수를 사용한다.
+- state가 배열일 경우 원래 배열을 직접 수정하지 않고, setState 함수의 인자로 들어오는 원래 배열을 복제해서 수정하거나, 새로운 배열을 만들어 리턴해야 한다.
+
+### 7.1
+
+- 배열 state를 map을 사용해 li태그로 변환해 출력할 수 있다.
+- map으로 나오는 태그에는 고유한 값을 key prop으로 넘겨줘야 한다.(map의 두번째 인자인 index활용)
+
+### 7.2
+
+- api를 fetch로 불러온다. 데이터를 불러오는 작업은 첫 렌더링 시 한번만 하면 되므로 useEffect를 활용한다.
+- 불러온 데이터로 state를 세팅하고, 원하는 곳에 활용할 수 있다.
+- 코인 데이터를 불러와 예산을 입력받고 구매 가능한 개수를 출력하는 앱 생성
+
+### 7.3
+
+- Movie App 만들기
+- movie api를 불러와서 이미지, 제목, 줄거리, 장르를 map으로 출력해준다.
+
+### 7.4
+
+- Movie 컴포넌트를 만들고, props로 이미지url, 제목, 줄거리, 장르를 받고, 각 prop의 타입을 지정해준다.
+- React Router를 이용해 페이지 전환을 할 수 있다.(react-router-dom 설치)
+- react router는 페이지의 url에 따라서 알맞은 컴포넌트를 보여준다.
+- 각 페이지들은 routes폴더에 넣어 관리한다.
+
+### 7.5
+
+- react-router-dom으로부터 Browser Router(Router), Routes, Route를 import해와서 App컴포넌트 안에 라우팅해준다.
+- Router>Routes>Route순으로 작성하고 Route의 path에는 해당 url문자열을 적어주고, element에는 출력할 컴포넌트를 적어준다.(6.0 버전 기준)
+- a태그만을 이용해서 페이지를 이동하면 전체 페이지가 새로고침된다. 이를 피하기 위해 Link를 사용하면, 전체 페이지 재실행 없이 이동한다.
+
+### 7.6
+
+- react router는 url에 변수를 적용해 사용할 수 있는 동적 url을 지원한다.
+- 변수로 사용하고 싶은 부분의 앞에는 콜론(`:`)을 적어준다.
+- react-router-dom에서 제공하는 useParams를 이용하면, params를 객체로 받아올 수 있다.
+
+### 7.7
+
+- gh-pages 설치
+- github pages는 우리가 만든 코드들을 볼 수 있게 할 수 있는 툴이다.
+- npm run build를 입력하면 build 폴더가 생성되고 압축된 최적화된 코드들이 만들어진다.
+- package.json에 `"homepage": "https://깃허브유저네임.github.io/레포지토리명"`라고 적는다.
+- package.json의 scripts에 `"deploy": "gh-pages -d build", "predeploy": "npm run build"`를 추가해준다.(gh-pages가 build폴더를 웹사이트에 업로드하도록 하는 것)
+
+### 7.8
+
+- 끝
+
+### 7.9
+
+- description의 길이가 너무 긴 경우 글자수를 기준으로 slice해서 출력하기
+
+### 7.10
+
+- class문법으로 작성하던 구버전의 react는 현재에도 동작하긴 하지만, 대부분의 개발자들이 더 편리한 함수형을 선호한다.
