@@ -6,12 +6,12 @@ import Category from "./routes/Category";
 
 function App() {
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <ScrollToTop />
       <Routes>
-        <Route path="/movie/:id" element={<Detail />} />
-        <Route path="/" element={<Home />} />
-        <Route path="/:category" element={<Category />} />
+        <Route path={"/movie/:id"} element={<Detail />} />
+        <Route path={"/"} element={<Home />} />
+        <Route path={"/:category"} element={<Category />} />
       </Routes>
     </Router>
   );
